@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function pick_words(){
-    cat dict.txt | grep "^[\w]*${1}[\w]*\S" | sort -R | head -n 5 | awk -F'\t' '{print "[\""$1"\",\""$2"\"],"}'| sort -R | head -n 5
+    cat dict.txt | grep "^${1}[A-z ]*\S" | sort -R | head -n 5 | awk -F'\t' '{print "[\""$1"\",\""$2"\"],"}'| sort -R | head -n 5
 }
 
 export -f pick_words
